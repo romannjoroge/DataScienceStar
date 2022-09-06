@@ -28,4 +28,14 @@ ORIENTATION TO DATASCIENCESTAR
   - As always let's see an example:
         from collections import Counter
         c = Counter([0, 0, 1,0, 2, 3]) # c is {0:3, 1:1, 2:1, 3:1}
-  - Counters have a most_common(x) method that returns the x most common entries in the Counter as a dictionary
+  - Counters have a most_common(x) method that returns the x most common entries in the Counter as a list of tuples
+
+
+  ) Sets
+  - A list of unique items
+  - SYNTAX!!!!
+        my_set = {1, 2 ,3 ,4}
+        empty_set = set() # only way to make an empty set as {} means an empty dict
+        empty_set.add(3)
+  - Sets are useful because testing for membership is very fast(faster than lists) and is useful for getting 
+    distinct elements in a collection
