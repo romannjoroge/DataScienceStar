@@ -1,0 +1,31 @@
+ORIENTATION TO DATASCIENCESTAR
+- I have just been employed at DataScienceStar and one of the first things I'm doing is attending the compulsory
+  python orientation session! These are some of the things I learnt:
+
+  1) Dictionaries
+  - A way to store a value so that it can be retrieved by using a specific name (key)
+  - The all important SYNTAX!!!!!
+        empty_dict = {} # To initialize a dict
+        full_dict = {"height": 1.72, "weight":79} # Creating a dict with values
+        height = full_dict['height'] # Getting a value using its name (key)
+        key in dict # To check whether a key is in the dictionary
+        dict.items() # Returns a list of tuples (key, value) that contain the key and value of an item in the dict
+  
+  - defaultdict is a version of a dictionary where if you try looking up a key that doesn't exist it adds the 
+    key to the dict with a value. The value comes from a function given when creating the defaultdict. The function
+    can't have arguements
+  - Let's look at an example!!!
+        from collections import defaultdict
+        word_counts = defaultdict(int)  # int() returns 0
+        list_dict = defaultdict(list) # list() returns an empty list
+        # The Roman Guess says that maybe its useful when you always want the same value returned if a key does not exist
+          and you don't want to check every time whether a key exists or not
+
+  2) Counters
+  - A Counter turns an iterable e.g a list into a dictionary. The keys in the dictionary are the unique items
+    in the iterable and the values are the number of times the item has appeared in the iterable.
+  - Good for when you want to get the count of items
+  - As always let's see an example:
+        from collections import Counter
+        c = Counter([0, 0, 1,0, 2, 3]) # c is {0:3, 1:1, 2:1, 3:1}
+  - Counters have a most_common(x) method that returns the x most common entries in the Counter as a dictionary
