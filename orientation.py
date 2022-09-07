@@ -96,3 +96,13 @@ set_from_list = set(list2)
 list3 = list(set_from_list)
 print(f"Amount of time to create distinct list from set is {time.time() - start_time} seconds")
 print(f"Length of distinct list is {len(list3)}")
+
+# MY VERDICT: MEMBERSHIP OPERATION FLUCTUATES BETWEEN LIST AND SET BEING FASTER BUT CREATING A LIST OF DISTINCT ITEMS IS NOT ONLY
+# EASIER BUT ALSO ALOT ORDERS OF MAGNITUDE FASTER WITH SETS
+
+print([(x, y)
+for x in range(10)
+for y in range(x + 1, 10)])
+
+def f(xs:List[int]) -> None:
+    xs.a

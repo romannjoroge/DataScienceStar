@@ -31,7 +31,7 @@ ORIENTATION TO DATASCIENCESTAR
   - Counters have a most_common(x) method that returns the x most common entries in the Counter as a list of tuples
 
 
-  ) Sets
+  3) Sets
   - A list of unique items
   - SYNTAX!!!!
         my_set = {1, 2 ,3 ,4}
@@ -39,3 +39,44 @@ ORIENTATION TO DATASCIENCESTAR
         empty_set.add(3)
   - Sets are useful because testing for membership is very fast(faster than lists) and is useful for getting 
     distinct elements in a collection
+
+
+  4) Iterables and Generators
+  - Let's say you have a list that has a billion elements but you only want to get the first 5 elements. It'd be wasteful to create
+    the whole list, store in memory to only use the first 5.
+  - In another scenario, if we only need one element from the time it'd still be wasteful to load the entire list but only use the
+    elements once and never again.
+  - This can be solved using generators which will return one element from an iterable every time it is called
+  - EXAMPLE!!!!!!
+        # Iterate over numbers from 1 to n
+        # Create the generator
+        def generate_range(n):
+            i = 0
+            while i < n:
+                yield i 
+                i += 1
+        # Using values in generator
+        for i in generate_range(10):
+            print(i)
+
+
+  5) Randomness
+  - Randomness is achieved using the random package
+  - EXAMPLES!!!!
+        import random
+        random.random() # Generates a random number between 0 and 1
+        random.randrange(x, [y]) # Generates a random number between 0 and xx if y is not specified and between x and y if y is specified
+        random.shuffle(list) # Randomly shuffles the elements in a list
+        random.choice(list) # Randomly pick an element from a list
+        random.sample(list, x) # Randomly pick x unique elements from list
+
+ 
+  6) Type Annotation
+  - Allows your editor to auto complete things more since it knows the type of your arguements
+  - The typing module allows us to be more specific with the typing of things
+  - Example!!!!!
+        from typing import List
+        def f(xs:List[int]) -> int: # Without typing module we cannot specify that we want a list of ints
+            return sum(xs)
+
+THESE NOTES WILL BE CONTINUED IN A GOOGLE DOCS FILE
