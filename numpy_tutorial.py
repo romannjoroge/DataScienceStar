@@ -6,6 +6,8 @@ import numpy as np
 a = np.array([1, 2, 3])
 b = np.array([[1, 2 ,3],
               [4, 5, 6]]) # Multidimensional array
+v = np.arange(10)  # To create a numpy array that has values from 0 to 9
+w = v[v % 2 == 1]
 
 # General info - number of dimensions, shape, number of elements, size of elements and data type of elements
 # Get number of dimension of array
