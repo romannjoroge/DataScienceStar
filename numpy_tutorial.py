@@ -69,3 +69,59 @@ j = i.copy() # Assign a copy of i to j
 print(j + 2)
 # Perform a function on all array elements
 print(np.sin(j))
+
+# To multiply 2 matrices use function np.matmul()
+k = np.full((2, 2), 4)
+l = np.identity(2)
+m = np.matmul(k, l)
+print(m)
+print(f"m's determinant is {np.linalg.det(m)}")
+
+# Statistics
+n = np.random.rand(4, 3)
+print(n)
+print(np.min(n))  # Smallest element in entire array
+print(np.max(n))  # Biggest element in entire array
+print(np.min(n, axis=0))  # Smallest element of every column, returns an array
+print(np.max(n, axis=1))  # Biggest element of every row, returns an array
+print(np.sum(n))  # Sum of all elements in array
+print(np.sum(n, axis=0))  # Returns an array containing sums of all columns
+
+# Reorgainizing
+before = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8]])
+print(f"Array before reshaping is {before}")
+after = before.reshape((2, 2, 2))  # Give the function the shape of the new array you want, the size of the new array must be the same as old one
+print(f"Array after reshaping is {after}")
+# To stack multiple arrays ontop of each other(vertical stacking), arrays should have same number of columns
+o = np.array([[j for j in range(1, 5)] for i in range(1, 5)])
+p = np.array([i for i in range(5, 9)])
+print(o, p)
+print(f"o and p vertically stacked is {np.vstack([o, p])}")
+# To stack arrays horizontally use np.hstack, arrays should have the same number of rows
+q = np.ones((3, 5))
+r = np.zeros((3, 7))
+print(f"q and r horizontally stacked makes{np.hstack([q, r])}")
+
+# Miscellaneous
+print(r.astype('int32'))  # Changes data types of elements in array and returns copy of changed array
+
+# Boolean Masking and Advanced Masking
+s = np.random.randint(1, 51, size=(100))
+# To get a boolean array where the value in array is whether that element met a condition or not
+t = s == 50
+print(t)
+# To get values that meet a condition, index array with booleans
+print(s[s > 45])
+# To see whether the columns / rows have any values that meet a condition
+u = np.random.randint(5, 16, size=(4, 3))
+print(u)
+print(np.any(u > 10, axis=0)) # Return booleans of which columns have any values greater than 10
+print(np.all(u > 10, axis=0)) # Return booleans for which columns have all values greater than 10
+# ~ - not, & - and | - or
+test = np.array([i for i in range(1, 31)])
+test = test.reshape((6, 5))
+print(test)
+print(test[2:4, :2])
+print(test[[0, 1, 2, 3], [1, 2, 3, 4]])
+print(test[[0, 4, 5], -2:])
